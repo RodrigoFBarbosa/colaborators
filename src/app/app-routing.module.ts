@@ -20,7 +20,7 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     
 ]},
-  { path: '', redirectTo: 'informations', pathMatch: 'full' },
+  { path: '', redirectTo: 'informations/home', pathMatch: 'full' },
   
 ];
 

@@ -8,6 +8,8 @@
     --title-color: #585667;
     --text-color: #7F7CA2;
 
+    --hover-primary-color: #8077ec;
+
 }
 
 html, body { height: 100%; }
@@ -17,3 +19,9 @@ body { margin: 0; padding: 0; font-family: DM Sans; background-color: #f9f9ff; }
 a {
     text-decoration: none;
 }
+
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";

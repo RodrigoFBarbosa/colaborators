@@ -19,6 +19,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InformationsComponent } from './informations/informations.component';
 import { ProjectAllocationComponent } from './project-allocation/project-allocation.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { CollaboratorsComponent } from './pages/collaborators/collaborators.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { DashComponent } from './pages/dash/dash.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { ColRegistrationComponent } from './pages/collaborators/col-registration/col-registration.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -33,6 +44,11 @@ import { ProjectAllocationComponent } from './project-allocation/project-allocat
     DashboardComponent,
     InformationsComponent,
     ProjectAllocationComponent,
+    SidenavComponent,
+    CollaboratorsComponent,
+    ProjectsComponent,
+    DashComponent,
+    ColRegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +61,12 @@ import { ProjectAllocationComponent } from './project-allocation/project-allocat
     MatDividerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatToolbarModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

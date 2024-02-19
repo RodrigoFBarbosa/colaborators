@@ -15,7 +15,7 @@ import { FooterComponent } from './sharepage/footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InformationsComponent } from './informations/informations.component';
 import { ProjectAllocationComponent } from './project-allocation/project-allocation.component';
@@ -30,6 +30,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { ColRegistrationComponent } from './pages/collaborators/col-registration/col-registration.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'; 
+
 
 
 @NgModule({
@@ -66,6 +69,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
     ModalModule.forRoot(),
   ],
   providers: [],

@@ -1,14 +1,157 @@
 <div class="modal-header">
-    <h4 class="modal-title pull-left">{{ title }}</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
+  <h4 class="modal-title pull-left">Collaborators Registration Form</h4>
+  <button
+    type="button"
+    class="btn-close close pull-right"
+    aria-label="Close"
+    (click)="bsModalRef.hide()"
+  >
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="registrationForm" class="row g-3" (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+      <label for="inputFirstName4" class="form-label">First Name*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputFirstName4"
+        formControlName="firstName"
+      />
+      <div
+        *ngIf="
+          f['firstName'].invalid &&
+          (f['firstName'].dirty || f['firstName'].touched)
+        "
+        class="text-danger"
+      >
+        <div *ngIf="f['firstName'].hasError('required')">
+          First Name is required
+        </div>
+        <div *ngIf="f['firstName'].hasError('minlength')">
+          First Name must be at least 3 characters
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="inputLastName4" class="form-label">Last Name*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputLastName4"
+        formControlName="lastName"
+      />
+      <div
+        *ngIf="
+          f['lastName'].invalid &&
+          (f['lastName'].dirty || f['lastName'].touched)
+        "
+        class="text-danger"
+      >
+        <div *ngIf="f['lastName'].hasError('required')">
+          Last Name is required
+        </div>
+        <div *ngIf="f['lastName'].hasError('minlength')">
+          Last Name must be at least 3 characters
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="input" class="form-label">Marital Status*</label>
+      <select
+        class="form-select custom-width"
+        aria-label="Default select example"
+        formControlName="maritalStatus"
+      >
+        <option value="" selected>*Please Select*</option>
+        <option value="Single">Single</option>
+        <option value="Married">Married</option>
+        <option value="Divorced">Divorced</option>
+        <option value="Widowed">Widowed</option>
+        <option value="Civil">Civil Union</option>
+        <option value="Other">Other</option>
+      </select>
+      <div *ngIf="f['maritalStatus'].hasError('required') && (f['maritalStatus'].dirty || f['maritalStatus'].touched)" class="text-danger">
+        Marital Status is required
+      </div>      
+    </div>
+    <div class="col-3">
+      <label for="Birthdate" class="form-label">Date of Birth*</label>
+      <input type="date" class="form-control" id="Birthdate" formControlName="birthdate" />
+      <div *ngIf="f['birthdate'].hasError('required') && (f['birthdate'].dirty || f['birthdate'].touched)" class="text-danger">
+        Date of Birth is required
+      </div>
+      <div *ngIf="f['birthdate'].hasError('invalidDate') && (f['birthdate'].dirty || f['birthdate'].touched)" class="text-danger">
+        Date of Birth must be between 1920 and 2010
+      </div>
+      
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email*</label>
+      <input type="email" class="form-control" id="inputEmail4" formControlName="email" />
+      <div *ngIf="f['email'].hasError('required') && (f['email'].dirty || f['email'].touched)" class="text-danger">
+        Email is required
+      </div>
+      <div *ngIf="f['email'].hasError('invalidFormat') && (f['email'].dirty || f['email'].touched)" class="text-danger">
+        Invalid email format
+      </div>
+    </div>
+    <div class="col-10">
+      <label for="inputAddress" class="form-label">Street Adress*</label>
+      <input type="text" class="form-control" id="inputAddress" formControlName="streetAddress" />
+      <div *ngIf="f['streetAddress'].hasError('required') && (f['streetAddress'].dirty || f['streetAddress'].touched)" class="text-danger">
+        Street Address is required
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label for="inputNumber" class="form-label">Number*</label>
+      <input type="text" class="form-control" id="inputNumber" formControlName="number" />
+      <div *ngIf="f['number'].hasError('required') && (f['number'].dirty || f['number'].touched)" class="text-danger">
+        Number is required
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="inputCity" class="form-label">City*</label>
+      <input type="text" class="form-control" id="inputCity" formControlName="city" />
+      <div *ngIf="f['city'].hasError('required') && (f['city'].dirty || f['city'].touched)" class="text-danger">
+        City is required
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State*</label>
+      <input type="text" class="form-control" id="inputState" formControlName="state" />
+      <div *ngIf="f['state'].hasError('required') && (f['state'].dirty || f['state'].touched)" class="text-danger">
+        State is required
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip*</label>
+      <input type="text" class="form-control" id="inputZip" formControlName="zip" />
+      <div *ngIf="f['zip'].hasError('required') && (f['zip'].dirty || f['zip'].touched)" class="text-danger">
+        Zip is required
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label for="inputCountry" class="form-label">Country*</label>
+      <input type="text" class="form-control" id="inputCountry" formControlName="country" />
+      <div *ngIf="f['country'].hasError('required') && (f['country'].dirty || f['country'].touched)" class="text-danger">
+        Country is required
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <div class="col">
+    <button
+      type="submit"
+      class="btn btn-primary custom-btn"
+      [disabled]="registrationForm.invalid"
+    >
+      Register
     </button>
   </div>
-  <div class="modal-body">
-    <ul *ngIf="list.length">
-      <li *ngFor="let item of list">{{ item }}</li>
-    </ul>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{ closeBtnName }}</button>
-  </div>
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">
+    {{ closeBtnName }}
+  </button>
+</div>

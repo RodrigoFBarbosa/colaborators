@@ -16,7 +16,8 @@ export class CollaboratorsComponent {
       initialState: {
         list: ['Open a modal with component', 'Pass your data', 'Do something else', '...'],
         title: 'Modal with component'
-      }
+      },
+      class: 'modal-lg'
     };
     this.bsModalRef = this.modalService.show(ColRegistrationComponent, initialState);
     this.bsModalRef.content.closeBtnName = 'Close';

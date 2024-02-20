@@ -31,7 +31,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ColRegistrationComponent } from './pages/collaborators/col-registration/col-registration.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -71,6 +73,8 @@ import {MatInputModule} from '@angular/material/input';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSortModule,
+    MatTableModule,
     ModalModule.forRoot(),
   ],
   providers: [],

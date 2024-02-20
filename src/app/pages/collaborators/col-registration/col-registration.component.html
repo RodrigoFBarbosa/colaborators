@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left">Collaborators Registration Form</h4>
+  <h4 class="modal-title pull-left"><strong>Collaborators Registration Form</strong></h4>
   <button
     type="button"
     class="btn-close close pull-right"
@@ -83,13 +83,13 @@
         Date of Birth is required
       </div>
       <div *ngIf="f['birthdate'].hasError('invalidDate') && (f['birthdate'].dirty || f['birthdate'].touched)" class="text-danger">
-        Date of Birth must be between 1920 and 2010
+        Date of Birth must be between 1930 and 2010
       </div>
       
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email*</label>
-      <input type="email" class="form-control" id="inputEmail4" formControlName="email" />
+      <input type="email" class="form-control" id="inputEmail4" placeholder="email@example.com" formControlName="email" />
       <div *ngIf="f['email'].hasError('required') && (f['email'].dirty || f['email'].touched)" class="text-danger">
         Email is required
       </div>

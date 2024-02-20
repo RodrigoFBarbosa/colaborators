@@ -6,6 +6,7 @@
 .sidenav {
   width: 200px;
   background-color: var(--primary-color);
+  
 }
 
 
@@ -31,4 +32,12 @@ a:hover {
 
 .tech {
   color: var(--headings-black);
+}
+
+.mat-nav-list a.white-text {
+  color: #fff !important;
+}
+
+span {
+  color: #f9f9ff;
 }

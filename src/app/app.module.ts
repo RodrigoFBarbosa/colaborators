@@ -34,6 +34,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 
@@ -75,6 +76,7 @@ import {MatTableModule} from '@angular/material/table';
     MatInputModule,
     MatSortModule,
     MatTableModule,
+    PaginationModule,
     ModalModule.forRoot(),
   ],
   providers: [],

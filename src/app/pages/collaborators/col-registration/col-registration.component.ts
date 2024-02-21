@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { CollaboratorService } from 'src/app/shared/services/collaborator.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ColRegistrationComponent implements OnInit{
   closeBtnName?: string;
   list: string[] = [];
  
-  constructor(public bsModalRef: BsModalRef, private formBuilder: FormBuilder) {}
+  constructor(public bsModalRef: BsModalRef, private formBuilder: FormBuilder, private collaboratorService: CollaboratorService) {}
  
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
@@ -62,19 +63,13 @@ export class ColRegistrationComponent implements OnInit{
 
   onSubmit() {
     // Verifica se o formulário é válido
-    if (this.registrationForm.invalid) {
-      // Marca todos os campos como tocados para exibir mensagens de erro
-      Object.values(this.registrationForm.controls).forEach(control => {
-        control.markAsTouched();
-      });
-      return;
+    if (this.registrationForm.valid) {
+      const firstName = this.registrationForm.value.firstName;
+      const lastName = this.registrationForm.value.lastName;
+      const fullName = `${firstName} ${lastName}`;
+      this.collaboratorService.addCollaborator(fullName);
+      this.bsModalRef.hide(); // Esconda o modal após o registro
     }
-
-    // Aqui você pode adicionar a lógica para enviar o formulário
-    console.log(this.registrationForm.value);
-
-    // Fecha o modal após enviar o formulário
-    this.bsModalRef.hide();
   }
 }
  

@@ -1,11 +1,13 @@
 .sidenav-container {
   height: 100%;
   background-color: #EFEEFB;
+  
 }
 
 .sidenav {
   width: 200px;
   background-color: var(--primary-color);
+  
   
 }
 
@@ -28,6 +30,7 @@ a:hover {
 .header-toolbar {
   background-color: white;
   color: var(--primary-color);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.397);
 }
 
 .tech {

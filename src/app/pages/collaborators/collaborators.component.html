@@ -1,2 +1,57 @@
+<div class="table-container">
+  <div class="table-content">
+    <div class="list-header">
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search Collaborator"
+          aria-label="Search"
+        />
+        <button class="search-btn" type="submit">Search</button>
+      </form>
 
-<button type="button" class="btn btn-primary" (click)="openModalWithComponent()">Create modal with component</button>
+      <button
+        type="button"
+        (click)="openModalWithComponent()"
+      >
+        <strong>Add Collaborator <span>+</span></strong>
+      </button>
+    </div>
+
+    <table class="table caption-top table-striped table-hover">
+      <caption>
+        List of Collaborators
+      </caption>
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Job Function</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>

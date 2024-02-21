@@ -1,8 +1,49 @@
-table {
-    width: 100%;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
+.table-container {
+    padding: 20px;
+}
+
+.table-content {
+    padding: 10px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.274);
+}
+
+button {
+    background-color: #21c01e;
+    padding: 10px 20px;
+    color: #f9f9ff;
+    font-size: 18px;
+    border: 1px solid #21c01e;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #21c01e;
+    border: 1px solid #21c01e;
+    filter: brightness(85%);
+
+}
+
+.select-menu {
+    background-color: white;
+}
+
+.list-header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.search-btn {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.search-btn:hover {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    filter: brightness(85%);
+}
+

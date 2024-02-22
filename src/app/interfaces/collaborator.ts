@@ -1,4 +1,4 @@
-
+import { Contract, ContractForm } from './contract';
 import { Address, AddressForm } from './address';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -10,6 +10,7 @@ export interface Collaborator {
     birthdate: string;
     email: string;
     address: Address;
+    contract: Contract;
 }
 
 export interface CollaboratorForm {
@@ -20,4 +21,5 @@ export interface CollaboratorForm {
     birthdate: FormControl<string>;
     email: FormControl<number>;
     address: FormGroup<AddressForm>;
+    contract: FormGroup<ContractForm>;
 }

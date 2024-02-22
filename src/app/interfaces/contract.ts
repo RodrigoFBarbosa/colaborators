@@ -1,4 +1,4 @@
-import { FormControl } from "@angular/forms";
+import { FormControl, Validators } from "@angular/forms";
 
 
 export interface Contract {
@@ -16,3 +16,4 @@ export interface ContractForm {
     jobFunction: FormControl<string>;
     typeOfContract: FormControl<string>;
 }
+

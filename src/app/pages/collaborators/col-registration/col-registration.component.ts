@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { CollaboratorService } from 'src/app/shared/services/collaborator.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class ColRegistrationComponent implements OnInit{
   title?: string;
   closeBtnName?: string;
   list: string[] = [];
+  collaborators$!: Observable<string[]>;
  
   constructor(public bsModalRef: BsModalRef, private formBuilder: FormBuilder, private collaboratorService: CollaboratorService) {}
  
@@ -38,6 +40,9 @@ export class ColRegistrationComponent implements OnInit{
       jobFunction: ['', Validators.required],
       typeOfContract: ['', Validators.required],
     });
+
+    this.collaborators$ = this.collaboratorService.getCollaborators();
+
   }
 
   dateOfBirthValidator(control: AbstractControl): ValidationErrors | null {

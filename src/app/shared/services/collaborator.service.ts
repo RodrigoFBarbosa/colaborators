@@ -1,5 +1,7 @@
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Collaborator } from 'src/app/interfaces/collaborator';
 
 @Injectable({
   providedIn: 'root'

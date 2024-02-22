@@ -32,7 +32,11 @@ export class ColRegistrationComponent implements OnInit{
       city: ['', Validators.required],
       state: ['', Validators.required],
       zip: ['', Validators.required],
-      country: ['', Validators.required]
+      country: ['', Validators.required],
+      admissionDate: ['', [Validators.required, this.dateOfAdimissionValidator]],
+      workingHours: ['', Validators.required],
+      jobFunction: ['', Validators.required],
+      typeOfContract: ['', Validators.required],
     });
   }
 
@@ -46,6 +50,19 @@ export class ColRegistrationComponent implements OnInit{
     }
 
     return null;
+  }
+
+  dateOfAdimissionValidator(control: AbstractControl): ValidationErrors | null {
+    const admissionDate = new Date(control.value);
+    const adMinDate = new Date('2023-01-01')
+    const adMaxDate = new Date('2024-02-02')
+
+    if (admissionDate < adMinDate || admissionDate > adMaxDate) {
+      return {invalidDate: true};
+    }
+
+    return null;
+
   }
 
   validateEmailFormat(control: AbstractControl): ValidationErrors | null {

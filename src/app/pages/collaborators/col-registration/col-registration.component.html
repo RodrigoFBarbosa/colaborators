@@ -85,7 +85,6 @@
       <div *ngIf="f['birthdate'].hasError('invalidDate') && (f['birthdate'].dirty || f['birthdate'].touched)" class="text-danger">
         Date of Birth must be between 1930 and 2010
       </div>
-      
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email*</label>
@@ -138,6 +137,48 @@
       <div *ngIf="f['country'].hasError('required') && (f['country'].dirty || f['country'].touched)" class="text-danger">
         Country is required
       </div>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="col-3">
+      <label for="admissionDate" class="form-label">Admission Date*</label>
+      <input type="date" class="form-control" id="admissionDate" formControlName="admissionDate">
+      <div *ngIf="f['admissionDate'].hasError('required') && (f['admissionDate'].dirty || f['admissionDate'].touched)" class="text-danger">
+        Admission Date is required
+      </div>
+      <div *ngIf="f['admissionDate'].hasError('invalidDate') && (f['admissionDate'].dirty || f['admissionDate'].touched)" class="text-danger">
+        Date of Admission must be between 2023 and 2024
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="workingHours" class="form-label">Working Hours*</label>
+      <input type="text" class="form-control" id="workingHours" formControlName="workingHours">
+      <div *ngIf="f['workingHours'].hasError('required') && (f['workingHours'].dirty || f['workingHours'].touched)" class="text-danger">
+        Working Hours is required
+      </div>
+    </div>  
+    <div class="col-6">
+      <label for="jobFunction" class="form-label">Job Function*</label>
+      <input type="text" class="form-control" id="jobFunction" formControlName="jobFunction">
+      <div *ngIf="f['jobFunction'].hasError('required') && (f['jobFunction'].dirty || f['jobFunction'].touched)" class="text-danger">
+        Job Function is required
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="typeOfContract" class="form-label">Type of Contract*</label>
+      <select
+        class="form-select custom-width"
+        aria-label="Default select example"
+        formControlName="typeOfContract"
+      >
+        <option value="" selected>*Please Select*</option>
+        <option value="Temporary">Temporary</option>
+        <option value="full-time">Full-time</option>
+        <option value="Hourly">Hourly</option>
+      </select>
+      <div *ngIf="f['typeOfContract'].hasError('required') && (f['typeOfContract'].dirty || f['typeOfContract'].touched)" class="text-danger">
+        Type of Contract is required
+      </div>      
     </div>
   </form>
 </div>
